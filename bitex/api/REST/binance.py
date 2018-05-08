@@ -70,7 +70,7 @@ class BinanceREST(RESTAPI):
         else:
             req_kwargs['data'] = req_string
 
-        req_kwargs['headers'] = {'X-MBX-APIKEY': self.key}
-        # req_kwargs['headers'] = {'X-MBX-APIKEY': self.key.encode('utf-8')}
+        #req_kwargs['headers'] = {'X-MBX-APIKEY': self.key}
+        req_kwargs['headers'] = {'X-MBX-APIKEY': self.key.encode('utf-8')}
 
         return req_kwargs

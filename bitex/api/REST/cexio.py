@@ -35,6 +35,8 @@ class CEXioREST(RESTAPI):
         # Parameters go into headers & data, so pop params key and generate signature
         nonce = self.nonce()
         message = nonce + self.user_id + self.key
+        #sign = hmac.new(bytes(self.secret, encoding='utf8'), msg=bytes(message, encoding="utf8"),
+        #                digestmod=hashlib.sha256)
         sign = hmac.new(bytes(self.secret, encoding='utf8'), msg=bytes(message, encoding="utf8"),
                         digestmod=hashlib.sha256)
         signature = sign.hexdigest()
